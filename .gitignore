@@ -1,0 +1,21 @@
+# Dependencies
+node_modules
+
+# Build files
+dist
+
+# Environment variables
+.env
+.envcopy
+
+# Archive files
+archive
+
+# Seeders & Json
+cars.json
+
+# IDE/Editor files
+.vscode
+*.code-workspace
+
+
