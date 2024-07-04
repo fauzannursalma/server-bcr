@@ -110,7 +110,7 @@ export class CarController {
 
       const car = await this.carService.update(
         req.params.id,
-        req.body,
+        body,
         req.file,
         userId
       );
