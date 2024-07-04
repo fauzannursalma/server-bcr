@@ -12,7 +12,7 @@ import { config } from "dotenv";
 config();
 
 import knexInstance from "./db";
-import router from "./routes";
+import router from "./routes/routes";
 
 const stringPORT = process.env.DB_PORT;
 const PORT = stringPORT ? parseInt(stringPORT) : 6543;

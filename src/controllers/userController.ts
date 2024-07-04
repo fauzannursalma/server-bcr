@@ -166,21 +166,9 @@ export class UserController {
     }
   }
 
-  async signInWithGoogle(req: Request, res: Response): Promise<void> {
+  async loginWithGoogle(req: Request, res: Response): Promise<void> {
     try {
-      const { token } = req.body;
-
-      const ticket = await client.verifyIdToken({
-        idToken: token,
-        audience: process.env.GOOGLE_CLIENT_ID,
-      });
-
-      const payload = ticket.getPayload();
-      if (!payload) {
-        throw new Error("Invalid Google token");
-      }
-
-      const user = await this.userService.signInWithGoogle(payload);
+      const user = await this.userService.loginWithGoogle(req.body);
 
       ResponseHelper.success("Login success", user)(res);
     } catch (error) {

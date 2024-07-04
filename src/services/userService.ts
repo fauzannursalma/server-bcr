@@ -91,7 +91,7 @@ export class UserService {
     });
   }
 
-  async signInWithGoogle(body: any): Promise<any> {
+  async loginWithGoogle(body: any): Promise<any> {
     const { tokenID } = body;
 
     const ticket = await this.client.verifyIdToken({
@@ -104,7 +104,12 @@ export class UserService {
     const user = await this.userRepository.show({ email: payload?.email });
 
     if (user === undefined) {
-      throw new Error("Email not registered");
+      await this.userRepository.create({
+        id: uuidv4(),
+        name: payload?.name,
+        email: payload?.email,
+        role: "member",
+      });
     }
 
     const token = createToken({

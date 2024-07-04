@@ -9,7 +9,7 @@ dist
 .envcopy
 
 # Archive files
-archive
+arc
 
 # Seeders & Json
 cars.json

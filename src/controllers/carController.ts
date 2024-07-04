@@ -52,12 +52,23 @@ export class CarController {
     try {
       const id = uuidv4();
 
-      // temp : default userId = req.userData.id
-      const userId = "a3c4e7a2-dc6c-4a82-91d6-eb0c38d7866e";
+      const userId = req.userData.id;
+      // const userId = "a3c4e7a2-dc6c-4a82-91d6-eb0c38d7866e";
+
+      const rent_per_day = parseInt(req.body.rent_per_day, 10);
+      const capacity = parseInt(req.body.capacity, 10);
+      const available = req.body.available
+        ? req.body.available === "true"
+        : false;
+      const year = parseInt(req.body.year, 10);
 
       const body = {
         id,
         ...req.body,
+        rent_per_day,
+        capacity,
+        available,
+        year,
       };
 
       const car = await this.carService.create(body, req.file, userId);
@@ -78,7 +89,24 @@ export class CarController {
         return;
       }
 
-      const userId = "a3c4e7a2-dc6c-4a82-91d6-eb0c38d7866e"; // temp : default userId = req.userData.id
+      const userId = req.userData.id;
+
+      // const userId = "a3c4e7a2-dc6c-4a82-91d6-eb0c38d7866e"; // temp : default
+
+      const rent_per_day = parseInt(req.body.rent_per_day, 10);
+      const capacity = parseInt(req.body.capacity, 10);
+      const available = req.body.available
+        ? req.body.available === "true"
+        : false;
+      const year = parseInt(req.body.year, 10);
+
+      const body = {
+        ...req.body,
+        rent_per_day,
+        capacity,
+        available,
+        year,
+      };
 
       const car = await this.carService.update(
         req.params.id,
@@ -99,7 +127,9 @@ export class CarController {
         return;
       }
 
-      const userId = "a3c4e7a2-dc6c-4a82-91d6-eb0c38d7866e"; // temp : default userId = req.userData.id
+      const userId = req.userData.id;
+
+      // const userId = "a3c4e7a2-dc6c-4a82-91d6-eb0c38d7866e"; // temp : default
 
       await this.carService.delete(req.params.id, userId);
       ResponseHelper.success("Data has been deleted successfully.", null)(res);
