@@ -14,7 +14,7 @@ config();
 import knexInstance from "./db";
 import router from "./routes/routes";
 
-const stringPORT = process.env.DB_PORT;
+const stringPORT = process.env.PORT;
 const PORT = stringPORT ? parseInt(stringPORT) : 8000;
 
 const app: Express = express();
