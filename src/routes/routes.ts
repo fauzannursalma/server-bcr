@@ -16,10 +16,7 @@ router.post(
   "/login/google",
   userController.loginWithGoogle.bind(userController)
 );
-router.post(
-  "/signup/google",
-  userController.signUpWithGoogle.bind(userController)
-);
+
 router.get("/profile", auth, userController.profile.bind(userController));
 
 router.get("/users", authAdmin, userController.list.bind(userController));
