@@ -92,10 +92,10 @@ export class UserService {
   }
 
   async loginWithGoogle(body: any): Promise<any> {
-    const { tokenID } = body;
+    const { token } = body;
 
     const ticket = await this.client.verifyIdToken({
-      idToken: tokenID,
+      idToken: token,
       audience: process.env.GOOGLE_CLIENT_ID,
     });
 
@@ -112,7 +112,7 @@ export class UserService {
       });
     }
 
-    const token = createToken({
+    const newToken = createToken({
       id: user.id,
       name: user.name,
       email: user.email,
@@ -122,7 +122,7 @@ export class UserService {
     return {
       name: user.name,
       email: user.email,
-      token,
+      newToken,
     };
   }
 
