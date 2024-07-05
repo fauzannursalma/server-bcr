@@ -1,12 +1,12 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "BCR-CH6",
+    "title": "BCR-CH8",
     "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "http://localhost:8000"
+      "url": "https://yucky-honey-fauzann-b31e29ee.koyeb.app/"
     }
   ],
   "tags": [
@@ -23,7 +23,9 @@
   "paths": {
     "/api/login": {
       "post": {
-        "tags": ["Auth"],
+        "tags": [
+          "Auth"
+        ],
         "summary": "Login",
         "requestBody": {
           "content": {
@@ -168,7 +170,9 @@
     },
     "/api/register": {
       "post": {
-        "tags": ["Auth"],
+        "tags": [
+          "Auth"
+        ],
         "summary": "Register",
         "requestBody": {
           "content": {
@@ -177,7 +181,7 @@
                 "type": "object",
                 "example": {
                   "name": "User 1",
-                  "email": "user2@mail.com",
+                  "email": "mamang@mail.com",
                   "password": "password"
                 }
               }
@@ -313,7 +317,9 @@
     },
     "/api/profile": {
       "get": {
-        "tags": ["Auth"],
+        "tags": [
+          "Auth"
+        ],
         "summary": "Profile",
         "parameters": [
           {
@@ -322,7 +328,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzYzRlN2EyLWRjNmMtNGE4Mi05MWQ2LWViMGMzOGQ3ODY2ZSIsIm5hbWUiOiJGYXV6YW4gTnVyc2FsbWEiLCJlbWFpbCI6ImZhdXphbm5AbWFpbC5jb20iLCJyb2xlIjoic3VwZXJhZG1pbiIsImlhdCI6MTcxNzI1NDk0NywiZXhwIjoxNzE3MjU4NTQ3fQ.-c2ZVTWAtd-QU4Dx7mv85iAWWq_eeB9nE5GPuACbwpk"
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzYzRlN2EyLWRjNmMtNGE4Mi05MWQ2LWViMGMzOGQ3ODY2ZSIsIm5hbWUiOiJGYXV6YW4gTnVyc2FsbWEiLCJlbWFpbCI6ImZhdXphbm5AbWFpbC5jb20iLCJyb2xlIjoic3VwZXJhZG1pbiIsImlhdCI6MTcyMDEzOTMyNywiZXhwIjoxNzIwMTQyOTI3fQ.yOZDZLAX35QlG_z5tVczYWhpeJJ7QMcMw6E846sDzoo"
           }
         ],
         "responses": {
@@ -473,7 +479,9 @@
     },
     "/api/users/": {
       "get": {
-        "tags": ["User"],
+        "tags": [
+          "User"
+        ],
         "summary": "Detail User",
         "parameters": [
           {
@@ -482,7 +490,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc5YjJlZjcyLTE1ODAtNGY1Ny05Y2YyLTI3MmE5MTI1NWRhYyIsIm5hbWUiOiJZdm9ubmUgQXVmZGVyaGFyIiwiZW1haWwiOiJLYXRobGVlbjMyQHlhaG9vLmNvbSIsImlhdCI6MTcxNzIyMzA4MiwiZXhwIjoxNzE3MjI2NjgyfQ.SXuPDg935EiSq_0xNFfDqHdU1NtIUK4P_6FnMcrkP-Y"
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzYzRlN2EyLWRjNmMtNGE4Mi05MWQ2LWViMGMzOGQ3ODY2ZSIsIm5hbWUiOiJGYXV6YW4gTnVyc2FsbWEiLCJlbWFpbCI6ImZhdXphbm5AbWFpbC5jb20iLCJyb2xlIjoic3VwZXJhZG1pbiIsImlhdCI6MTcyMDEzOTMyNywiZXhwIjoxNzIwMTQyOTI3fQ.yOZDZLAX35QlG_z5tVczYWhpeJJ7QMcMw6E846sDzoo"
           }
         ],
         "responses": {
@@ -673,7 +681,9 @@
         }
       },
       "post": {
-        "tags": ["User"],
+        "tags": [
+          "User"
+        ],
         "summary": "Create User (Admin)",
         "requestBody": {
           "content": {
@@ -890,7 +900,9 @@
     },
     "/api/users/{id}": {
       "put": {
-        "tags": ["User"],
+        "tags": [
+          "User"
+        ],
         "summary": "Update User",
         "requestBody": {
           "content": {}
@@ -1055,7 +1067,9 @@
         }
       },
       "delete": {
-        "tags": ["User"],
+        "tags": [
+          "User"
+        ],
         "summary": "Delete",
         "parameters": [
           {
@@ -1201,7 +1215,9 @@
     },
     "/api/users/change-password/{id}": {
       "put": {
-        "tags": ["User"],
+        "tags": [
+          "User"
+        ],
         "summary": "Change Password",
         "requestBody": {
           "content": {
@@ -1373,7 +1389,9 @@
     },
     "/api/cars": {
       "get": {
-        "tags": ["Car"],
+        "tags": [
+          "Car"
+        ],
         "summary": "List Car",
         "parameters": [
           {
@@ -3067,7 +3085,9 @@
     },
     "/api/cars/{id}": {
       "get": {
-        "tags": ["Car"],
+        "tags": [
+          "Car"
+        ],
         "summary": "Detail Car",
         "parameters": [
           {
@@ -3379,7 +3399,9 @@
         }
       },
       "put": {
-        "tags": ["Car"],
+        "tags": [
+          "Car"
+        ],
         "summary": "Update Car",
         "requestBody": {
           "content": {
@@ -3566,7 +3588,9 @@
         }
       },
       "delete": {
-        "tags": ["Car"],
+        "tags": [
+          "Car"
+        ],
         "summary": "Delete Car",
         "parameters": [
           {
@@ -3772,7 +3796,9 @@
     },
     "/api/cars/": {
       "post": {
-        "tags": ["Car"],
+        "tags": [
+          "Car"
+        ],
         "summary": "Create Car",
         "requestBody": {
           "content": {
